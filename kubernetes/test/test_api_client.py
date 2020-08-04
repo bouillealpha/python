@@ -11,6 +11,10 @@ import kubernetes
 class TestApiClient(unittest.TestCase):
 
     def test_context_manager_closes_threadpool(self):
+        """
+        Testing sum
+        """
+        
         with kubernetes.client.ApiClient() as client:
             self.assertIsNotNone(client.pool)
             pool_ref = weakref.ref(client._pool)
